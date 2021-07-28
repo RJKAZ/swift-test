@@ -42,6 +42,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Rk-YH-PRn">
                                 <rect key="frame" x="173.66666666666666" y="312" width="67" height="30"/>
                                 <state key="normal" title="Exchange"/>
+                                <connections>
+                                    <action selector="exchangeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xsP-ag-11h"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -73,6 +76,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7cP-nr-6QB" secondAttribute="trailing" constant="25" id="xUd-bF-Lbg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="inputTextField" destination="7cP-nr-6QB" id="7LS-0T-v7K"/>
+                        <outlet property="ratioTextField" destination="jxc-xf-6Hb" id="U89-gW-tgZ"/>
+                        <outlet property="resultLabel" destination="V01-LR-46g" id="Mc4-tN-eyG"/>
+                        <outlet property="toggleCurrency" destination="2lP-YK-tP9" id="1dF-Pt-RGm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
