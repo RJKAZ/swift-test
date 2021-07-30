@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mYc-99-eOq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IWB-qB-F1e">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Country Table View Controller-->
+        <!--Country List-->
         <scene sceneID="xPW-Ze-mhf">
             <objects>
                 <tableViewController id="mYc-99-eOq" customClass="CountryTableViewController" customModule="Country_List" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,10 +31,76 @@
                             <outlet property="delegate" destination="mYc-99-eOq" id="i9K-yZ-HVd"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Country List" id="Lja-Fs-uTZ">
+                        <barButtonItem key="backBarButtonItem" title="Back " id="gP5-fj-uSW"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="LTE-mp-61q" kind="show" identifier="DefinitionSegue" id="APe-jF-zVI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J6f-f5-Zxd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1043" y="78"/>
+            <point key="canvasLocation" x="1952.1739130434785" y="77.678571428571431"/>
+        </scene>
+        <!--Country Definition View Controller-->
+        <scene sceneID="PDw-ah-PQh">
+            <objects>
+                <viewController id="LTE-mp-61q" customClass="CountryDefinitionViewController" customModule="Country_List" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dkE-5x-iBT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="🇨🇦" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQo-c3-m9y">
+                                <rect key="frame" x="97.5" y="69" width="219" height="240"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="201"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text=" Canada is the greatest country in the whole wide world and everyone loves it there" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVN-2n-Pza">
+                                <rect key="frame" x="15" y="356" width="384" height="86"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Zo1-SE-IWt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xVN-2n-Pza" firstAttribute="centerX" secondItem="dkE-5x-iBT" secondAttribute="centerX" id="BPh-xo-m6y"/>
+                            <constraint firstItem="xVN-2n-Pza" firstAttribute="leading" secondItem="Zo1-SE-IWt" secondAttribute="leading" constant="15" id="CXh-Tg-al8"/>
+                            <constraint firstItem="xVN-2n-Pza" firstAttribute="centerX" secondItem="dkE-5x-iBT" secondAttribute="centerX" id="E6z-aX-1h6"/>
+                            <constraint firstItem="xVN-2n-Pza" firstAttribute="top" secondItem="yQo-c3-m9y" secondAttribute="bottom" constant="47" id="Ejo-rJ-eP3"/>
+                            <constraint firstItem="yQo-c3-m9y" firstAttribute="centerX" secondItem="dkE-5x-iBT" secondAttribute="centerX" id="IZ8-90-cXL"/>
+                            <constraint firstItem="yQo-c3-m9y" firstAttribute="top" secondItem="Zo1-SE-IWt" secondAttribute="top" constant="25" id="M3W-cu-3V0"/>
+                            <constraint firstItem="Zo1-SE-IWt" firstAttribute="trailing" secondItem="xVN-2n-Pza" secondAttribute="trailing" constant="15" id="Sot-uj-6v2"/>
+                            <constraint firstItem="Zo1-SE-IWt" firstAttribute="bottom" secondItem="xVN-2n-Pza" secondAttribute="bottom" constant="485.5" id="n3X-5i-2yV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SXw-Oz-9i4"/>
+                    <connections>
+                        <outlet property="bigFlagLabel" destination="yQo-c3-m9y" id="Id3-aZ-zyA"/>
+                        <outlet property="countryDefinitionLabel" destination="xVN-2n-Pza" id="xoR-QK-Yud"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ky9-xQ-hMG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2658" y="78"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Vry-mI-xpO">
+            <objects>
+                <navigationController id="IWB-qB-F1e" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CF3-ku-ZUk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mYc-99-eOq" kind="relationship" relationship="rootViewController" id="ZAc-lD-UW8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kUK-7G-eph" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1223" y="78"/>
         </scene>
     </scenes>
     <resources>
