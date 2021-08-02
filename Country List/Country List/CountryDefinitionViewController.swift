@@ -13,39 +13,13 @@ class CountryDefinitionViewController: UIViewController {
     
     @IBOutlet weak var countryDefinitionLabel: UILabel!
     
-    var country = "🇨🇦";
+    var country = Country();
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bigFlagLabel.text = country;
-        
-        //let flags = ["🇦🇽", "🇦🇷", "🇨🇦", "🇧🇴", "🇮🇨", "🇰🇾"];
-        
-        if country == "🇦🇽"
-        {
-            countryDefinitionLabel.text = "Aland"
-        }
-        if country == "🇦🇷"
-        {
-            countryDefinitionLabel.text = "Argentina"
-        }
-        if country == "🇨🇦"
-        {
-            countryDefinitionLabel.text = "Canada"
-        }
-        if country == "🇧🇴"
-        {
-            countryDefinitionLabel.text = "Bolivia"
-        }
-        if country == "🇮🇨"
-        {
-            countryDefinitionLabel.text = "Canary Islands"
-        }
-        if country == "🇰🇾"
-        {
-            countryDefinitionLabel.text = "New Zealand"
-        }
+        bigFlagLabel.text = country.flag;
+        countryDefinitionLabel.text = "\(country.name) flag is \(country.flag). It was founded in \(country.year). It is in \(country.region). The population is \(country.population) million."
         
         
     }
