@@ -46,7 +46,7 @@
         <!--Blog App-->
         <scene sceneID="65O-Oz-xXH">
             <objects>
-                <viewController id="cMA-kY-5ye" sceneMemberID="viewController">
+                <viewController id="cMA-kY-5ye" customClass="BlogEntryViewController" customModule="My_Daily_Blog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xty-sp-AOf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -91,6 +91,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="blogEntryTextView" destination="Mbb-a0-Rst" id="fIq-IG-BRk"/>
+                        <outlet property="datePicker" destination="Thd-2U-JZb" id="FKp-Rx-KyA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQa-Ay-mGo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
