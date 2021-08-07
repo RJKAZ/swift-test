@@ -17,8 +17,8 @@
 		896AEB5A26BB1A7200A21BB3 /* My_Daily_BlogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896AEB5926BB1A7200A21BB3 /* My_Daily_BlogTests.swift */; };
 		896AEB6526BB1A7200A21BB3 /* My_Daily_BlogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896AEB6426BB1A7200A21BB3 /* My_Daily_BlogUITests.swift */; };
 		896AEB7326BCB38300A21BB3 /* BlogEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896AEB7226BCB38300A21BB3 /* BlogEntry.swift */; };
-		896AEB7526BCB4E200A21BB3 /* BlogEntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896AEB7426BCB4E200A21BB3 /* BlogEntriesTableViewController.swift */; };
 		896AEB7726BCB51A00A21BB3 /* BlogEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896AEB7626BCB51A00A21BB3 /* BlogEntryViewController.swift */; };
+		896AEB7926BE045100A21BB3 /* BlogEntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896AEB7826BE045100A21BB3 /* BlogEntriesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +55,8 @@
 		896AEB6426BB1A7200A21BB3 /* My_Daily_BlogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Daily_BlogUITests.swift; sourceTree = "<group>"; };
 		896AEB6626BB1A7200A21BB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		896AEB7226BCB38300A21BB3 /* BlogEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogEntry.swift; sourceTree = "<group>"; };
-		896AEB7426BCB4E200A21BB3 /* BlogEntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogEntriesTableViewController.swift; sourceTree = "<group>"; };
 		896AEB7626BCB51A00A21BB3 /* BlogEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogEntryViewController.swift; sourceTree = "<group>"; };
+		896AEB7826BE045100A21BB3 /* BlogEntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogEntriesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +112,8 @@
 				896AEB4126BB1A7000A21BB3 /* SceneDelegate.swift */,
 				896AEB4326BB1A7000A21BB3 /* ViewController.swift */,
 				896AEB4526BB1A7000A21BB3 /* Main.storyboard */,
+				896AEB7826BE045100A21BB3 /* BlogEntriesTableViewController.swift */,
 				896AEB7626BCB51A00A21BB3 /* BlogEntryViewController.swift */,
-				896AEB7426BCB4E200A21BB3 /* BlogEntriesTableViewController.swift */,
 				896AEB4B26BB1A7200A21BB3 /* Assets.xcassets */,
 				896AEB4D26BB1A7200A21BB3 /* LaunchScreen.storyboard */,
 				896AEB5026BB1A7200A21BB3 /* Info.plist */,
@@ -272,11 +272,11 @@
 			files = (
 				896AEB4426BB1A7000A21BB3 /* ViewController.swift in Sources */,
 				896AEB7326BCB38300A21BB3 /* BlogEntry.swift in Sources */,
-				896AEB7526BCB4E200A21BB3 /* BlogEntriesTableViewController.swift in Sources */,
 				896AEB4A26BB1A7000A21BB3 /* My_Daily_Blog.xcdatamodeld in Sources */,
 				896AEB7726BCB51A00A21BB3 /* BlogEntryViewController.swift in Sources */,
 				896AEB4026BB1A7000A21BB3 /* AppDelegate.swift in Sources */,
 				896AEB4226BB1A7000A21BB3 /* SceneDelegate.swift in Sources */,
+				896AEB7926BE045100A21BB3 /* BlogEntriesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
