@@ -1,10 +1,3 @@
-//
-//  BlogEntriesTableViewController.swift
-//  My Daily Blog
-//
-//  Created by Reese RJ Kaz on 8/6/21.
-//
-
 import UIKit
 
 class BlogEntriesTableViewController: UITableViewController {
@@ -13,9 +6,21 @@ class BlogEntriesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-
-        // Do any additional setup after loading the view.
+        // this is called once(at the first time)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // this is called every time
+        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
+            
+            if let dataFromCoreData = try? context.fetch(BlogEntry.fetchRequest())
+                as? [BlogEntry]{
+                
+                blogEntries = dataFromCoreData;
+                tableView.reloadData()
+                
+            }
+        }
     }
     
     
@@ -37,7 +42,6 @@ class BlogEntriesTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let entryViewController = segue.destination as? BlogEntryViewController {
             
-            entryViewController.entriesViewController = self;
         }
     }
 
