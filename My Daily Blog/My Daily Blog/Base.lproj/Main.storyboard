@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Blog Entries Table View Controller-->
         <scene sceneID="jRQ-gh-oMs">
             <objects>
-                <tableViewController id="imI-Mm-7Ur" sceneMemberID="viewController">
+                <tableViewController id="imI-Mm-7Ur" customClass="BlogEntriesTableViewController" customModule="My_Daily_Blog" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iQx-Re-APb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +34,7 @@
                     <navigationItem key="navigationItem" id="fl7-2x-tEC">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="6xZ-2R-IZH">
                             <connections>
-                                <segue destination="cMA-kY-5ye" kind="show" id="jBu-jr-7nG"/>
+                                <segue destination="cMA-kY-5ye" kind="show" identifier="onEntrySegue" id="jBu-jr-7nG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -88,6 +88,9 @@
                     <navigationItem key="navigationItem" title="Blog App" id="64p-Wa-SNX">
                         <barButtonItem key="rightBarButtonItem" image="trash" catalog="system" id="ZbK-0Q-fA9">
                             <color key="tintColor" systemColor="systemRedColor"/>
+                            <connections>
+                                <action selector="onDelete:" destination="cMA-kY-5ye" id="jyD-id-Ykx"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
