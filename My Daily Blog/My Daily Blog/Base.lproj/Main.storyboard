@@ -53,6 +53,9 @@
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Thd-2U-JZb">
                                 <rect key="frame" x="47" y="113" width="320" height="128"/>
+                                <connections>
+                                    <action selector="onDataChange:" destination="cMA-kY-5ye" eventType="valueChanged" id="tgF-IQ-DEN"/>
+                                </connections>
                             </datePicker>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Mbb-a0-Rst">
                                 <rect key="frame" x="25" y="266" width="364" height="522"/>

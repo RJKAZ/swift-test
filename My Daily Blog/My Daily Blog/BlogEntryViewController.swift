@@ -1,6 +1,6 @@
 import UIKit
 
-class BlogEntryViewController: UIViewController {
+class BlogEntryViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var blogEntryTextView: UITextView!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -11,29 +11,22 @@ class BlogEntryViewController: UIViewController {
         super.viewDidLoad()
 
         if blogEntry == nil {
-            //create entry
-        } else {
-            //fill info
-            blogEntryTextView.text = blogEntry!.content
-            if let dateToBeDisplayed = blogEntry!.date {
-                datePicker.date = dateToBeDisplayed            }
-          
-        }
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        if blogEntry == nil {
             if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
                 
-                let blogEntry = BlogEntry(context: context);
-                blogEntry.date = datePicker.date
-                blogEntry.content = blogEntryTextView.text
-                
+                blogEntry = BlogEntry(context: context);
+                blogEntry?.date = datePicker.date
+                blogEntry?.content = blogEntryTextView.text
             }
         }
-            
+        blogEntryTextView.text = blogEntry?.content
+        if let dateToBeDisplayed = blogEntry?.date {
+            datePicker.date = dateToBeDisplayed
+        }
+        blogEntryTextView.delegate = self;
         
-    (UIApplication.shared.delegate as? AppDelegate)?.saveContext();
-        
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        (UIApplication.shared.delegate as? AppDelegate)?.saveContext();
     }
     @IBAction func onDelete(_ sender: Any) {
         if blogEntry != nil {
@@ -45,4 +38,12 @@ class BlogEntryViewController: UIViewController {
         }
         navigationController?.popViewController(animated: true)
 }
+    func textViewDidChange(_ textView: UITextView) {
+        blogEntry?.content = blogEntryTextView.text
+        (UIApplication.shared.delegate as? AppDelegate)?.saveContext();
+        
+    }
+    @IBAction func onDataChange(_ sender: Any) {
+        blogEntry?.date  = datePicker.date
+        (UIApplication.shared.delegate as? AppDelegate)?.saveContext();    }
 }
