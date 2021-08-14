@@ -99,6 +99,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="blogEntryTextView" destination="Mbb-a0-Rst" id="fIq-IG-BRk"/>
+                        <outlet property="botConstraint" destination="Xty-sp-AOf" id="7Rk-m7-M8T"/>
                         <outlet property="datePicker" destination="Thd-2U-JZb" id="FKp-Rx-KyA"/>
                     </connections>
                 </viewController>

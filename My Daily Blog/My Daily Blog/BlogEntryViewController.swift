@@ -4,18 +4,21 @@ class BlogEntryViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var blogEntryTextView: UITextView!
     @IBOutlet weak var datePicker: UIDatePicker!
-    
+    @IBOutlet var botConstraint: NSLayoutConstraint!
     var blogEntry: BlogEntry?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
 
         if blogEntry == nil {
             if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
                 
                 blogEntry = BlogEntry(context: context);
                 blogEntry?.date = datePicker.date
-                blogEntry?.content = blogEntryTextView.text
+                blogEntry?.content = "Thank you"
+                blogEntryTextView.becomeFirstResponder();
             }
         }
         blogEntryTextView.text = blogEntry?.content
@@ -28,6 +31,17 @@ class BlogEntryViewController: UIViewController, UITextViewDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext();
     }
+    
+    @objc func keyboardWillShow(notification: NSNotification){
+        if let keyboardFrame: NSValue =
+            notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            
+            botConstraint.constant = keyboardHeight
+        }
+    }
+    
     @IBAction func onDelete(_ sender: Any) {
         if blogEntry != nil {
             if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext{
