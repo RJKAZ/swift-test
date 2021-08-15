@@ -29,14 +29,16 @@ class BlogEntriesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let row = UITableViewCell();
+        if let row = tableView.dequeueReusableCell(withIdentifier: "entryRow") {
+            let blogEntry = blogEntries[indexPath.row]
+            
+            //row.textLabel?.text = blogEntry.content
+            
+            return row
+        } else {
+            return UITableViewCell()
+        }
         
-        let blogEntry = blogEntries[indexPath.row]
-        
-        row.textLabel?.text = blogEntry.content
-        
-        return row
-   
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -44,9 +46,13 @@ class BlogEntriesTableViewController: UITableViewController {
     let blogEntry = blogEntries[indexPath.row];
     
     performSegue(withIdentifier: "onEntrySegue", sender: blogEntry)
-    
-    
 }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let entryViewController = segue.destination as? BlogEntryViewController {
             
