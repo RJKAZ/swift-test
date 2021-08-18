@@ -1,4 +1,5 @@
 import UIKit
+import CoreData
 
 class BlogEntriesTableViewController: UITableViewController {
     
@@ -13,7 +14,10 @@ class BlogEntriesTableViewController: UITableViewController {
         // this is called every time
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             
-            if let dataFromCoreData = try? context.fetch(BlogEntry.fetchRequest())
+            let request: NSFetchRequest<BlogEntry> =  BlogEntry.fetchRequest()
+            request.sortDescriptors = [NSSortDescriptor(key:"date", ascending: false)]
+            
+            if let dataFromCoreData = try? context.fetch(request)
                 as? [BlogEntry]{
                 
                 blogEntries = dataFromCoreData;
@@ -29,8 +33,11 @@ class BlogEntriesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let row = tableView.dequeueReusableCell(withIdentifier: "entryRow") {
-            let blogEntry = blogEntries[indexPath.row]
+        if let row = tableView.dequeueReusableCell(withIdentifier: "entryRow") as? BlogEntryTableViewCell {
+            let blogEntry = blogEntries[indexPath.row];
+            row.entryContentLabel.text = blogEntry.content
+            row.monthTag.text = blogEntry.setMonth()
+            row.dayTag.text = blogEntry.setDay()
             
             //row.textLabel?.text = blogEntry.content
             

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8956AA2726CC80A1006B3EF4 /* BlogEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956AA2626CC80A1006B3EF4 /* BlogEntryTableViewCell.swift */; };
 		896AEB4026BB1A7000A21BB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896AEB3F26BB1A7000A21BB3 /* AppDelegate.swift */; };
 		896AEB4226BB1A7000A21BB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896AEB4126BB1A7000A21BB3 /* SceneDelegate.swift */; };
 		896AEB4426BB1A7000A21BB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896AEB4326BB1A7000A21BB3 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8956AA2626CC80A1006B3EF4 /* BlogEntryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogEntryTableViewCell.swift; sourceTree = "<group>"; };
 		896AEB3C26BB1A7000A21BB3 /* My Daily Blog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Daily Blog.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		896AEB3F26BB1A7000A21BB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		896AEB4126BB1A7000A21BB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				896AEB4126BB1A7000A21BB3 /* SceneDelegate.swift */,
 				896AEB4326BB1A7000A21BB3 /* ViewController.swift */,
 				896AEB4526BB1A7000A21BB3 /* Main.storyboard */,
+				8956AA2626CC80A1006B3EF4 /* BlogEntryTableViewCell.swift */,
 				896AEB7826BE045100A21BB3 /* BlogEntriesTableViewController.swift */,
 				896AEB7626BCB51A00A21BB3 /* BlogEntryViewController.swift */,
 				896AEB4B26BB1A7200A21BB3 /* Assets.xcassets */,
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8956AA2726CC80A1006B3EF4 /* BlogEntryTableViewCell.swift in Sources */,
 				896AEB4426BB1A7000A21BB3 /* ViewController.swift in Sources */,
 				896AEB4A26BB1A7000A21BB3 /* My_Daily_Blog.xcdatamodeld in Sources */,
 				896AEB7726BCB51A00A21BB3 /* BlogEntryViewController.swift in Sources */,
